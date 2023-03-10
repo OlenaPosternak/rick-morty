@@ -1,16 +1,15 @@
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './HomePage';
+import { CharacterInfo } from './CharacterInfo';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:charactertId" element={<CharacterInfo />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
+    </>
   );
 };
