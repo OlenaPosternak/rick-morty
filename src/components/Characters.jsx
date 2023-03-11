@@ -1,23 +1,30 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import {List} from './CharactersList.styled'
+import {
+  List,
+  ListItem,
+  Image,
+  CharactersInfo,
+  CharactersName,
+  CharactersSpecies
+} from './CharactersList.styled';
 
 export const CharactersList = ({ visibleCharacters }) => {
   const location = useLocation();
 
-  
   return (
     <>
       <List>
         {visibleCharacters.map(characters => (
-          <li key={characters.id}>
+          <ListItem key={characters.id}>
             <Link to={`${characters.id}`} state={{ from: location }}>
-              <img src={characters.image} alt="" />
-
-              {characters.name}
-              {characters.species}
+              <Image src={characters.image} alt="" />
+              <CharactersInfo>
+                <CharactersName>{characters.name}</CharactersName>
+                <CharactersSpecies>{characters.species}</CharactersSpecies>
+              </CharactersInfo>
             </Link>
-          </li>
+          </ListItem>
         ))}
       </List>
     </>
