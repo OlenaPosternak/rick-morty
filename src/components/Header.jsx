@@ -1,4 +1,9 @@
 import header from '../img/header.png';
+import { HeaderSection, HeroImg } from './Header.styled';
 export const Header = () => {
-  return <img src={header} alt="Rick & Morty" width={600} height={200} />;
+  return (
+    <HeaderSection>
+      <HeroImg src={header} alt="Rick & Morty" />
+    </HeaderSection>
+  );
 };

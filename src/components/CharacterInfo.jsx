@@ -8,7 +8,6 @@ export const CharacterInfo = () => {
   const [origin, setOrigin] = useState();
 
   const location = useLocation();
-  console.log(location);
   const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
@@ -38,7 +37,6 @@ export const CharacterInfo = () => {
     getCharacter();
   }, [charactertId]);
 
-  console.log(character);
 
   return (
     <>

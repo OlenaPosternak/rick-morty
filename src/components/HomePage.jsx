@@ -5,6 +5,8 @@ import { CharactersList } from './Characters';
 import { useState, useEffect } from 'react';
 import { fetchCharacters, fetchFilteredCharacter } from '../fetchApi';
 
+import {Container} from './HomePage.styled';
+
 export const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [filter, setFilter] = useState('');
@@ -12,7 +14,6 @@ export const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const characterName = searchParams.get('name') ?? '';
 
-  console.log(`characterName`, characterName);
 
   const updateQueryString = name => {
     const nextParams = name !== '' ? { name } : {};
@@ -40,7 +41,7 @@ export const Home = () => {
           setCharacters(data.results)
         );
       } catch (error) {
-        console.log(`getCharacters`, error);
+        console.log(`fetchFilteredCharacter`, error);
       }
     }
     filteredCharacter();
@@ -48,7 +49,11 @@ export const Home = () => {
 
   const filterNormilized = filter.toLowerCase().trim();
 
-  let visibleCharacters = characters;
+  const sortedCharacters = characters.sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+
+  let visibleCharacters = sortedCharacters;
 
   if (characters.length > 0) {
     visibleCharacters = characters.filter(character =>
@@ -57,10 +62,10 @@ export const Home = () => {
   }
 
   return (
-    <>
+    <Container>
       <Header />
       <Filter value={characterName} onChange={updateQueryString} />
       <CharactersList visibleCharacters={visibleCharacters} />
-    </>
+    </Container>
   );
 };
