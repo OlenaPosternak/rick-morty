@@ -12,8 +12,8 @@ export const App = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:charactertId" element={<CharacterInfo />} />
+        <Route path="/rick-morty" element={<Home />} />
+        <Route path="/rick-morty/:charactertId" element={<CharacterInfo />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
