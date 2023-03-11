@@ -30,6 +30,12 @@ export const ListItem = styled.li`
     margin-bottom: 0px;
     width: 240px;
   }
+
+  transition: all 0.4s ease;
+  &:hover,
+  &:focus {
+    background-color: rgba(146, 232, 159, 1);
+  }
 `;
 
 export const CharactersInfo = styled.div`
@@ -38,7 +44,7 @@ export const CharactersInfo = styled.div`
   padding: 14px 16px 12px 16px;
 `;
 
-export const CharactersName = styled.p`
+export const CharactersName = styled.h6`
   color: rgba(0, 0, 0, 0.87);
 
   font-size: 20px;

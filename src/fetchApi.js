@@ -21,12 +21,10 @@ export async function getCharacterByID(id) {
 }
 
 export async function fetchFilteredCharacter(query) {
-    try {
-      const response = await axios.get(
-        `character/?name=${query}`
-      );
-      return response.data;
-    } catch (error) {
-      new Error('Not Found');
-    }
+  try {
+    const response = await axios.get(`character/?name=${query}`);
+    return response.data;
+  } catch (error) {
+    new Error('Not Found');
   }
+}

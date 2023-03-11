@@ -1,19 +1,18 @@
 import { useSearchParams } from 'react-router-dom';
-import { Header } from './Header';
-import { Filter } from './Filter';
-import { CharactersList } from './Characters';
+import { Header } from '../../components/Header/Header';
+import { Filter } from '../../components/Filter/Filter';
+import { CharactersList } from '../../components/Characters/Characters';
 import { useState, useEffect } from 'react';
-import { fetchCharacters, fetchFilteredCharacter } from '../fetchApi';
+import { fetchCharacters, fetchFilteredCharacter } from '../../fetchApi';
 
-import {Container} from './HomePage.styled';
+import { Container } from './HomePage.styled';
 
-export const Home = () => {
+const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [filter, setFilter] = useState('');
 
   const [searchParams, setSearchParams] = useSearchParams();
   const characterName = searchParams.get('name') ?? '';
-
 
   const updateQueryString = name => {
     const nextParams = name !== '' ? { name } : {};
@@ -69,3 +68,5 @@ export const Home = () => {
     </Container>
   );
 };
+
+export default Home;

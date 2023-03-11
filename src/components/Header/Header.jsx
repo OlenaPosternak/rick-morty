@@ -1,4 +1,4 @@
-import header from '../img/header.png';
+import header from '../../img/header.png';
 import { HeaderSection, HeroImg } from './Header.styled';
 export const Header = () => {
   return (
