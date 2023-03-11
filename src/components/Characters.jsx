@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import {List} from './CharactersList.styled'
 
 export const CharactersList = ({ visibleCharacters }) => {
   const location = useLocation();
@@ -7,7 +8,7 @@ export const CharactersList = ({ visibleCharacters }) => {
   
   return (
     <>
-      <ul>
+      <List>
         {visibleCharacters.map(characters => (
           <li key={characters.id}>
             <Link to={`${characters.id}`} state={{ from: location }}>
@@ -18,7 +19,7 @@ export const CharactersList = ({ visibleCharacters }) => {
             </Link>
           </li>
         ))}
-      </ul>
+      </List>
     </>
   );
 };
