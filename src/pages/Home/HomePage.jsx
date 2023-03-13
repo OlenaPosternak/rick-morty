@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { fetchCharacters, fetchFilteredCharacter } from '../../fetchApi';
 
 import { Container } from './HomePage.styled';
+import { PaginationBtns } from 'components/PaginationBtns/Buttons';
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
@@ -13,6 +14,9 @@ const Home = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const characterName = searchParams.get('name') ?? '';
+
+  const [page, setPage] = useState(1);
+  const [numberOfChars, setNumberOfChars] = useState(null);
 
   const updateQueryString = name => {
     const nextParams = name !== '' ? { name } : {};
@@ -24,27 +28,37 @@ const Home = () => {
     if (characterName === '') {
       async function getCharacters() {
         try {
-          await fetchCharacters().then(data => setCharacters(data.results));
+          await fetchCharacters(page).then(data => {
+            console.log(data);
+            setCharacters(data.results);
+            setNumberOfChars(data.info.count);
+          });
         } catch (error) {
           console.log(`getCharacters`, error);
         }
       }
       getCharacters();
     }
-  }, [characterName]);
+  }, [characterName, page]);
+
 
   useEffect(() => {
     async function filteredCharacter() {
       try {
-        await fetchFilteredCharacter(characterName).then(data =>
-          setCharacters(data.results)
+        await fetchFilteredCharacter(characterName, page).then(data =>{
+
+            setCharacters(data.results)
+            setCharacters(data.results);
+            setNumberOfChars(data.info.count);
+        }
+       
         );
       } catch (error) {
         console.log(`fetchFilteredCharacter`, error);
       }
     }
     filteredCharacter();
-  }, [characterName]);
+  }, [characterName, page]);
 
   const filterNormilized = filter.toLowerCase().trim();
 
@@ -65,6 +79,7 @@ const Home = () => {
       <Header />
       <Filter value={characterName} onChange={updateQueryString} />
       <CharactersList visibleCharacters={visibleCharacters} />
+     <PaginationBtns setPage={setPage} page={page} numberOfChars={numberOfChars}/>
     </Container>
   );
 };
