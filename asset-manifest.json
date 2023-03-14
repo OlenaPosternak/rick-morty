@@ -1,25 +1,26 @@
 {
   "files": {
     "main.css": "/rick-morty/static/css/main.712b06da.css",
-    "main.js": "/rick-morty/static/js/main.ce4cc3b6.js",
-    "static/js/661.ea4afbc8.chunk.js": "/rick-morty/static/js/661.ea4afbc8.chunk.js",
+    "main.js": "/rick-morty/static/js/main.af9b2b33.js",
+    "static/js/661.291c8017.chunk.js": "/rick-morty/static/js/661.291c8017.chunk.js",
     "static/js/971.9d4ff579.chunk.js": "/rick-morty/static/js/971.9d4ff579.chunk.js",
     "static/js/279.31a20f7d.chunk.js": "/rick-morty/static/js/279.31a20f7d.chunk.js",
     "static/js/827.aea8beb5.chunk.js": "/rick-morty/static/js/827.aea8beb5.chunk.js",
+    "static/media/logo.png": "/rick-morty/static/media/logo.08fef30d443e7cddbe31.png",
     "static/media/header.png": "/rick-morty/static/media/header.5d713b1e7be9cb53079f.png",
     "index.html": "/rick-morty/index.html",
     "static/media/google-icon.svg": "/rick-morty/static/media/google-icon.7b4831c0bc428f8ef649c8f6a5e00a66.svg",
     "static/media/SearchIcon.svg": "/rick-morty/static/media/SearchIcon.c77a50f238257623b5e066b03e852c00.svg",
     "static/media/arrow_back_24px.svg": "/rick-morty/static/media/arrow_back_24px.7ee5dd4eb1f8a8e3ef2fd62c9dcac6dc.svg",
     "main.712b06da.css.map": "/rick-morty/static/css/main.712b06da.css.map",
-    "main.ce4cc3b6.js.map": "/rick-morty/static/js/main.ce4cc3b6.js.map",
-    "661.ea4afbc8.chunk.js.map": "/rick-morty/static/js/661.ea4afbc8.chunk.js.map",
+    "main.af9b2b33.js.map": "/rick-morty/static/js/main.af9b2b33.js.map",
+    "661.291c8017.chunk.js.map": "/rick-morty/static/js/661.291c8017.chunk.js.map",
     "971.9d4ff579.chunk.js.map": "/rick-morty/static/js/971.9d4ff579.chunk.js.map",
     "279.31a20f7d.chunk.js.map": "/rick-morty/static/js/279.31a20f7d.chunk.js.map",
     "827.aea8beb5.chunk.js.map": "/rick-morty/static/js/827.aea8beb5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.712b06da.css",
-    "static/js/main.ce4cc3b6.js"
+    "static/js/main.af9b2b33.js"
   ]
 }
