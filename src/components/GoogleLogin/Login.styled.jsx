@@ -27,3 +27,10 @@ export const GoogleBtn = styled.button`
 export const UserName = styled.p`
     margin-bottom: 10px;
 `
+
+export const UserInfo = styled.div`
+display:flex;
+align-items:center;
+gap: 15px;
+margin-bottom: 5px;
+`
