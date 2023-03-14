@@ -85,7 +85,7 @@ const Home = () => {
     }
     gapi.load('client:auth2', start);
   }, []);
-  //
+
 
   const onSuccess = async response => {
     try {
